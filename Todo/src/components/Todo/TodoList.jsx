@@ -6,10 +6,8 @@ function TodoList({data, handleDelete, completed, handleComplete, isEditable, ha
   const [editTodoText, setEditTodoText] = useState("");
 
   const editTodo = (index) => {
-    handleUpdate(editTodoText,index)
-    
+    handleUpdate(editTodoText,index)    
   }
-  console.log(editTodoText);
   
   return (
         <>
@@ -35,8 +33,7 @@ function TodoList({data, handleDelete, completed, handleComplete, isEditable, ha
             value={isEditable && isEditable.id === todo.id? editTodoText : todo.text}
             onChange={(e) => setEditTodoText(e.target.value)}
             readOnly={isEditable && isEditable.id === todo.id ? false : true }
-        />
-              
+        />              
 
           {/* Edit, Save Button */}
           <button
@@ -55,7 +52,8 @@ function TodoList({data, handleDelete, completed, handleComplete, isEditable, ha
               }}
               disabled={todo.completed}
           >
-              {isEditable && isEditable.id === todo.id ? "📁" : "✏️"}
+          {isEditable && isEditable.id === todo.id ? "📁" : "✏️"}
+
           </button>
           {/* Delete Todo Button */}
           <button
@@ -65,8 +63,7 @@ function TodoList({data, handleDelete, completed, handleComplete, isEditable, ha
               ❌
           </button>
       </div>
-        ))}
-      
+        ))}      
       
         </>
     )
